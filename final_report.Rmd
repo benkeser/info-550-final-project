@@ -1,0 +1,38 @@
+---
+title: "INFO 550 Final Project"
+author: "Rachel Sagers"
+date: "`r Sys.Date()`"
+output: html_document
+params: 
+  production: TRUE
+---
+
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE
+)
+```
+
+```{r, here-i-am, include = FALSE}
+here::i_am(
+  "final_report.Rmd"
+)
+```
+
+# Introduction
+
+The goal of this analysis is to assess the impact of a free public transportation program that was implemented in Salt Lake City, Utah in February 2022. During this month, all buses and rails were free system wide, and the stated goal was to help improve the normally poor air quality during the winter inversion season by encouraging more people to use public transportation. The primary component of inversion pollution in the area is fine particulate matter, or PM2.5, and the primary anthropogenic source of PM2.5 is transportation. This analysis will thus focus on this air pollutant to assess improvements in air quality as a result of increased public transit use. The data set used for this analysis is an aggregate of daily mean concentrations of PM2.5 averaged across all EPA monitoring stations in Salt Lake County, for January through March of 2021 and 2022. This captures pre, during, and post the implementation of the free fare program in 2022, and allows comparison to a more typical winter season without the program in 2021. 
+
+# Monthly Average Concentration of PM2.5
+
+```{r, table}
+library(htmltools)
+htmltools::includeHTML("output/final_table.html")
+```
+
+# Daily Trends in PM2.5 Concentration
+
+``` {r, figure}
+ggplot_object
+```
