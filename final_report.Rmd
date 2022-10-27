@@ -34,5 +34,9 @@ htmltools::includeHTML("output/final_table.html")
 # Daily Trends in PM2.5 Concentration
 
 ``` {r, figure}
-ggplot_object
+#| fig.align = "center",
+#| out.width = "500px"
+knitr::include_graphics(
+  here::here("output/time_series_plot.png")
+)
 ```

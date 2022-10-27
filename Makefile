@@ -7,3 +7,5 @@ final_table.html: 00_read_data.R 01_make_summary_table.R
 	Rscript 01_make_summary_table
 
 # Rule to build figure
+time_series_plot.png: 00_read_data.R 02_make_summary_table.R
+	Rscript 02_make_summary_table

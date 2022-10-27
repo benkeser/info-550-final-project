@@ -8,6 +8,7 @@ pm_daily_mean$date <- as.Date(c(pm_daily_mean$date), "%m/%d/%Y")
 
 # creating a column for month and year
 pm_daily_mean$month <- months(pm_daily_mean$date)
+pm_daily_mean$month <- factor(pm_daily_mean$month, levels = c('January', 'February', 'March'))
 pm_daily_mean$year <- format(pm_daily_mean$date, format="%Y")
 
 # aggregating daily values by month and year

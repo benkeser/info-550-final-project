@@ -22,4 +22,8 @@ ggplot_object <- ggplot() +
   theme(legend.position = "bottom", plot.title=element_text(hjust=0.5)) +
   scale_color_manual(values = c("#9970de", "#37b9bf"))
                      
-ggsave("output/time_series_plot.svg", plot = last_plot())
+ggsave("output/time_series_plot.png", 
+       plot = last_plot(),
+       width = 10,
+       height = 8,
+       unit = "in")
