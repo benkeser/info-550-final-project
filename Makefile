@@ -4,11 +4,11 @@ final_report.html: render_final_report.R final_report.Rmd
 
 # Rule to build table
 final_table.html: 00_read_data.R 01_make_summary_table.R
-	Rscript 01_make_summary_table
+	Rscript 01_make_summary_table.R
 
 # Rule to build figure
 time_series_plot.png: 00_read_data.R 02_make_summary_table.R
-	Rscript 02_make_summary_table
+	Rscript 02_make_summary_table.R
 	
 .PHONY: clean
 clean:
@@ -17,3 +17,12 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt=FALSE)"
+	
+# Rule to build docker image
+finalproject: Dockerfile final_report.Rmd code/00_read_data.R code/01_make_summary_table.R code/02_make_time_series.R render_final_report.R Makefile
+	docker build -t finalproject .
+	touch $@
+
+# Rule to run docker container and build report automatically
+report/final_report.html:
+	docker run -v "/$$(pwd)/report":/report/final_report.html rachelsagers/finalproject
