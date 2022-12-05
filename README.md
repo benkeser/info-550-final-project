@@ -26,4 +26,4 @@ The final html report can be generated using the 'make' command, which will also
 
 ## Docker Container
 
-A docker image for creating this report is available on DockerHub at https://hub.docker.com/repository/docker/rachelsagers/finalproject. To build the container, run 'docker build -t rachelsagers/finalproject.' To run this container, execute 'docker run rachelsagers/finalproject.' In the bash terminal in the container, run 'make report/final_report.html', and the final report will be compiled and saved to the report directory for retrieval. 
+A docker image for creating this report is available on DockerHub at https://hub.docker.com/repository/docker/rachelsagers/finalproject. To build the container, run 'docker build -t rachelsagers/finalproject.' To generate the report, run make 'report/final_report.html' and the report will be generated and can be retrieved from the report directory.
