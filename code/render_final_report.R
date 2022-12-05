@@ -1,4 +1,4 @@
-here::i_am("render_final_report.R"
+here::i_am("code/render_final_report.R"
 )
 
 library(rmarkdown)
