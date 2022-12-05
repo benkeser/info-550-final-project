@@ -22,8 +22,7 @@ RUN mkdir data
 COPY data data
 COPY code code
 COPY final_report.Rmd .
-COPY render_final_report.R .
 
-RUN mkdir report
+RUN mkdir /report
 
-CMD make && mv final_report.html report
+CMD make && mv final_report.html /report
