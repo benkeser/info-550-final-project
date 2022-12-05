@@ -25,4 +25,4 @@ finalproject: Dockerfile final_report.Rmd code/00_read_data.R code/01_make_summa
 
 # Rule to run docker container and build report automatically
 report/final_report.html:
-	docker run -v "/$$(pwd)/"report:/report/final_report.html rachelsagers/finalproject
+	docker run -v "/$$(pwd)/report":/report/final_report.html rachelsagers/finalproject
