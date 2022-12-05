@@ -12,7 +12,7 @@ output/time_series_plot.png: code/00_read_data.R code/02_make_summary_table.R
 	
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f report.html
+	rm -f output/* && rm -f final_report.html
 
 .PHONY: install
 install:

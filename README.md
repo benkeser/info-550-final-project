@@ -18,7 +18,7 @@ The figure and table generated for this project are saved in the output director
 
 ### Renv project library managment
 
-The lockfile called 'renv.lock' contains information about the R packages related to the project. There is a rule included in the Makefile that runs the renv::restore() command with all prompts automatically selected to synchronize the project library.
+The lockfile called 'renv.lock' contains information about the R packages related to the project. There is a rule included in the Makefile that runs the renv::restore() command with all prompts automatically selected to synchronize the project library. Run this rule by executing 'make install'.
 
 ## Final Report
 
@@ -26,4 +26,6 @@ The final html report can be generated using the 'make' command, which will also
 
 ## Docker Container
 
-A docker image for creating this report is available on DockerHub at https://hub.docker.com/repository/docker/rachelsagers/finalproject. To build the container, run 'docker build -t rachelsagers/finalproject.' To generate the report, run make 'report/final_report.html' and the report will be generated and can be retrieved from the report directory. 
+A docker image for creating this report is available on DockerHub at https://hub.docker.com/repository/docker/rachelsagers/finalproject. Use the 'docker pull rachelsagers/finalproject" to retrieve the docker image. To build the container locally, run 'docker build -t rachelsagers/finalproject.' To run the container interactively, execute docker run -it rachelsagers/finalproject bash.' To generate the report inside the container, use 'make final_report.html.'
+
+To quickly and automatically create the report in the container, run "make report/final_report.html" and the final report will outputted in the report directory for retrieval. 
