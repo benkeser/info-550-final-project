@@ -1,7 +1,11 @@
 here::i_am("code/01_make_summary_table.R")
 
 library(knitr)
+library(magrittr)
 library(kableExtra)
+
+pm_daily_mean <- read.csv("data/agg_PM25_2021-22_daily_mean.csv")
+
 ## setting up data to calculate correctly for table
 # converting dates from characters to dates
 pm_daily_mean$date <- as.Date(c(pm_daily_mean$date), "%m/%d/%Y")
